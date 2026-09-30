@@ -1,10 +1,5 @@
 ﻿import { useEffect } from "react";
-import {
-  Link,
-  Route,
-  Routes,
-  useLocation,
-} from "react-router";
+import { Link, Route, Routes, useLocation } from "react-router";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -16,6 +11,7 @@ import Menu from "./pages/Menu";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import Reserve from "./pages/Reserve";
+import QuickContactBar from "./components/QuickContactBar";
 
 import "./styles/pages.scss";
 
@@ -31,19 +27,13 @@ const pageTitles = {
 function NotFound() {
   return (
     <main className="site-start">
-      <span className="eyebrow">
-        404 / A little detour
-      </span>
+      <span className="eyebrow">404 / A little detour</span>
 
       <h1>This table isn’t here.</h1>
 
-      <p>
-        Let’s get you back to a familiar place.
-      </p>
+      <p>Let’s get you back to a familiar place.</p>
 
-      <Link to="/">
-        Back to home ↗
-      </Link>
+      <Link to="/">Back to home ↗</Link>
     </main>
   );
 }
@@ -63,11 +53,9 @@ export default function App() {
     });
 
     const timer = window.setTimeout(() => {
-      document
-        .getElementById("main-content")
-        ?.focus({
-          preventScroll: true,
-        });
+      document.getElementById("main-content")?.focus({
+        preventScroll: true,
+      });
     }, 100);
 
     return () => {
@@ -81,10 +69,7 @@ export default function App() {
       <Loader key={pathname} />
 
       {/* ACCESSIBILITY */}
-      <a
-        className="skip-link"
-        href="#main-content"
-      >
+      <a className="skip-link" href="#main-content">
         Skip to content
       </a>
 
@@ -92,50 +77,28 @@ export default function App() {
       <Header />
 
       {/* PAGES */}
-      <div
-        id="main-content"
-        tabIndex={-1}
-      >
+      <div id="main-content" tabIndex={-1}>
         <Routes>
-          <Route
-            path="/"
-            element={<Home />}
-          />
+          <Route path="/" element={<Home />} />
 
-          <Route
-            path="/about"
-            element={<About />}
-          />
+          <Route path="/about" element={<About />} />
 
-          <Route
-            path="/menu"
-            element={<Menu />}
-          />
+          <Route path="/menu" element={<Menu />} />
 
-          <Route
-            path="/gallery"
-            element={<Gallery />}
-          />
+          <Route path="/gallery" element={<Gallery />} />
 
-          <Route
-            path="/contact"
-            element={<Contact />}
-          />
+          <Route path="/contact" element={<Contact />} />
 
-          <Route
-            path="/reserve"
-            element={<Reserve />}
-          />
+          <Route path="/reserve" element={<Reserve />} />
 
-          <Route
-            path="*"
-            element={<NotFound />}
-          />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
 
       {/* FOOTER */}
       <Footer />
+
+      <QuickContactBar />
     </>
   );
 }
