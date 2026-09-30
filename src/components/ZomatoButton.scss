@@ -1,0 +1,96 @@
+.zomato-button {
+  width: fit-content;
+  min-width: 250px;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 14px 18px;
+  border: 1px solid rgba(32, 48, 39, 0.18);
+  border-radius: 999px;
+
+  background: #f4f0e8;
+  color: #203027;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    background: #203027;
+    color: #f4f0e8;
+    border-color: #203027;
+
+    .zomato-button__dot {
+      background: #ef4f5f;
+      box-shadow: 0 0 0 6px rgba(239, 79, 95, 0.12);
+    }
+
+    .zomato-button__arrow {
+      transform: translate(3px, -3px);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid #203027;
+    outline-offset: 4px;
+  }
+
+  &__dot {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+
+    border-radius: 50%;
+    background: #ef4f5f;
+
+    transition:
+      background 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  &__content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 2px;
+
+    small {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      opacity: 0.65;
+    }
+
+    strong {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+  }
+
+  &__arrow {
+    font-size: 1.15rem;
+    line-height: 1;
+
+    transition: transform 0.3s ease;
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    min-width: 0;
+
+    padding: 13px 16px;
+
+    &__content {
+      strong {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

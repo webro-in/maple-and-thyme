@@ -1,0 +1,50 @@
+.home {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: 8rem var(--gutter) 5rem;
+  color: var(--on-dark);
+  background:
+    radial-gradient(circle at 75% 45%, rgba(185, 155, 104, 0.2), transparent 35%),
+    var(--espresso);
+
+  &__content {
+    width: min(100%, 900px);
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  &__eyebrow {
+    color: var(--gold-light);
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+  }
+
+  h1 {
+    margin: 1.5rem 0;
+    font-size: clamp(3rem, 8vw, 7rem);
+  }
+
+  &__description {
+    color: var(--on-dark-soft);
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+
+    a {
+      padding: 0.8rem 1.3rem;
+      border: 1px solid var(--gold);
+      border-radius: 100px;
+
+      &:hover {
+        color: var(--espresso);
+        background: var(--gold-light);
+      }
+    }
+  }
+}

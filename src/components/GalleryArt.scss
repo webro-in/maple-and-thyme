@@ -1,0 +1,93 @@
+.gallery-art {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  color: #5f694e;
+  background: #d8cbb4;
+
+  &__word {
+    position: absolute;
+    bottom: 8%;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+  }
+
+  &__shape {
+    display: block;
+    width: 58%;
+    height: 65%;
+    border: 1px solid currentColor;
+  }
+
+  &--arch {
+    .gallery-art__shape {
+      border-radius: 50% 50% 0 0;
+      background: linear-gradient(140deg, #768269, #354a3c);
+      box-shadow:
+        16px 16px 0 #b3b59a,
+        32px 32px 0 #c4b99f;
+    }
+  }
+
+  &--plate {
+    background: #a9b09a;
+
+    .gallery-art__shape {
+      width: 68%;
+      height: auto;
+      aspect-ratio: 1;
+      border: 12px solid #e1d6bf;
+      border-radius: 50%;
+      background: #eee6d6;
+      box-shadow:
+        0 18px 28px rgba(32, 48, 39, 0.19),
+        inset 0 0 0 1px #ae9b74;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 48%;
+        height: 48%;
+        margin: 26%;
+        border-radius: 80% 0;
+        background: #67774e;
+        transform: rotate(-25deg);
+      }
+    }
+  }
+
+  &--cup {
+    background: #e6d7bd;
+
+    .gallery-art__shape {
+      position: relative;
+      width: 47%;
+      height: auto;
+      aspect-ratio: 1;
+      border: 15px solid #f4f0e8;
+      border-radius: 50%;
+      background: radial-gradient(
+        ellipse at 45% 45%,
+        #dec29a 0 24%,
+        #a97744 25% 35%,
+        #624730 36%
+      );
+      box-shadow: 0 15px 25px rgba(32, 48, 39, 0.19);
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 35%;
+        left: 108%;
+        width: 32%;
+        height: 24%;
+        border: 9px solid #f4f0e8;
+        border-left: 0;
+        border-radius: 0 40% 40% 0;
+      }
+    }
+  }
+}
